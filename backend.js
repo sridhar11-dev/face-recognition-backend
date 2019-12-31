@@ -25,7 +25,7 @@ app.use(cors())
 
 app.get('/',(req,res)=>
 {
-	res.json(database.users)
+	res.json('it is working')
 
 })
 
@@ -39,7 +39,7 @@ app.get('/profile/:id',(req,res)=>{profile.handleprofileget(req,res,db)})
 app.put('/image',(req,res)=>{image.handleimageput(req,res,db)})
 app.post('/imageurl',(req,res)=>{image.handleapicall(req,res)})
 
-app.listen(3001,()=>
+app.listen(process.env.PORT|| 3001 ,()=>
 {
-	console.log("app is running is 3001")
+	console.log(`app is running is ${process.env.PORT}`)
 })
